@@ -182,7 +182,7 @@ if (isset($_POST['submit'])) {
                     <div id="link10" class="text-uppercase col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 mb-4 ">
                         <h6 class="text-uppercase font-weight-bold  mb-4" style="color: #70df70;
     font-weight: bold;
-    font-size: 30px;">About Us</h6>
+    font-size: 25px;">About Us</h6>
 
                         <p>
                             Welcome to
