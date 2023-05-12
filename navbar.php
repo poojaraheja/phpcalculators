@@ -6,19 +6,19 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
+            <ul class="navbar-nav me-auto mb-5 mb-lg-0">
+                <li class="nav-item mx-4">
                     <a class="nav-link" aria-current="page" href="#">Home</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item mx-4 ">
                     <a class="nav-link" href="#">Book an Appointment</a>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown mx-4 ">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         CALCULATE YOUR FITNESS
                     </a>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu mx-4 ">
                         <li><a class="dropdown-item" href="#">BMI</a></li>
                         <li><a class="dropdown-item" href="#">BMR</a></li>
                         <li><a class="dropdown-item" href="#">Waist to Hip Ratio</a></li>
@@ -29,10 +29,10 @@
 
                     </ul>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item mx-4 ">
                     <a class="nav-link" href="#">Testimonials</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item mx-4 ">
                     <a class="nav-link" href="#">Contact US</a>
                 </li>
 

@@ -142,3 +142,11 @@ p {
 	color: grey;
 	text-decoration: none;
 }
+.about > p > a {
+	text-decoration: none;
+}
+.nav-link {
+	font-size: 17px;
+	font-weight: 600;
+	color: black;
+}

@@ -139,7 +139,7 @@ if (isset($_POST['submit'])) {
 
                     </div>
 
-                    <div id="link10" class=" col-md-4  mx-auto mt-3 mb-4 text-center">
+                    <div id="link10" class="about col-md-4  mx-auto mt-3 mb-4 text-center">
                         <h6 class="text-uppercase font-weight-bold  mb-4 t" style="color: #70df70;
     font-weight: bold;
     font-size: 25px;">About Us</h6>
@@ -158,7 +158,7 @@ if (isset($_POST['submit'])) {
                     </div>
 
 
-                    <div class="col-md-4 mx-auto mt-3 mb-4 text-lg-end text-md-end text-sm-center">
+                    <div class="col-md-4 mx-auto mt-3 mb-4 text-lg-end text-md-end text-sm-center text-center">
                         <h6 class="text-uppercase font-weight-bold mb-4 " style="color: #70df70;
     font-weight: bold;
     font-size: 25px;">Contact Us</h6>
