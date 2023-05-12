@@ -172,18 +172,15 @@ if (isset($_POST['submit'])) {
 
         </div>
         <footer id="Footer" style="background-color:#fff;" class="page-footer font-small stylish-color-dark pt-4 mt-4">
-            <div style="background-color:#fff;" class="container text-center text-md-left">
+            <div style="background-color:#fff;" class="container">
                 <div class="row">
                     <div class="col-md-4 mx-auto">
                         <!-- Content -->
-                        <h5 class="text-uppercase font-weight-bold mt-3 mb-4">About our Company</h5>
-                        <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit
-                            amet,
-                            consectetur
-                            adipisicing elit.</p>
+                        <h5 class=" text-uppercase font-weight-bold mt-3 mb-4">About our Company</h5>
+
                     </div>
 
-                    <div id="link10" class="text-uppercase col-md-2 col-lg-2 col-xl-2 mx-auto mt-3 mb-4 ">
+                    <div id="link10" class=" col-md-4  mx-auto mt-3 mb-4 ">
                         <h6 class="text-uppercase font-weight-bold  mb-4" style="color: #70df70;
     font-weight: bold;
     font-size: 25px;">About Us</h6>
@@ -206,9 +203,9 @@ if (isset($_POST['submit'])) {
                         </p>
                     </div>
 
-                    <hr class="clearfix w-100 d-md-none">
-                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4  mt-3 mb-4 ">
-                        <h6 class="text-uppercase font-weight-bold mb-4" style="color: #70df70;
+
+                    <div class="col-md-4 mx-auto mt-3 mb-4 text-end">
+                        <h6 class="text-uppercase font-weight-bold mb-4 " style="color: #70df70;
     font-weight: bold;
     font-size: 25px;">Contact Us</h6>
                         <p>
