@@ -139,8 +139,8 @@ if (isset($_POST['submit'])) {
 
                     </div>
 
-                    <div id="link10" class=" col-md-4  mx-auto mt-3 mb-4 ">
-                        <h6 class="text-uppercase font-weight-bold  mb-4" style="color: #70df70;
+                    <div id="link10" class=" col-md-4  mx-auto mt-3 mb-4 text-center">
+                        <h6 class="text-uppercase font-weight-bold  mb-4 t" style="color: #70df70;
     font-weight: bold;
     font-size: 25px;">About Us</h6>
 
@@ -174,9 +174,12 @@ if (isset($_POST['submit'])) {
                             <i class="fas fa-envelope mr-3"></i> Info@uhealthy.in
                         </p>
                         <p>
-                            <i class="fas fa-phone mr-3"></i>2, Gaura Complex,
+                            2, Gaura Complex,
+                            <br>
                             Near Matrix Hospital,
+                            <br>
                             Haldwani – 263139
+                            <br>
                             Uttarakhand, India
                         </p>
 
@@ -188,12 +191,14 @@ if (isset($_POST['submit'])) {
 
             <!-- Copyright -->
             <div style="background-color:#fff;" class="footer-copyright text-center py-3">
-                Copyright© 2023: Design and Develop by Mag Cloud Solutions Pvt. Ltd.
+                Copyright© 2023 | <a href=" https://uhealthy.in/">Uhealthy.in</a><br>
+                Design and Develop by Mag Cloud Solutions Pvt. Ltd.
             </div>
+
         </footer>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
-        </script>
+            </script>
     </body>
 
 </html>

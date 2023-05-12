@@ -132,5 +132,8 @@ textarea.form-control {
 	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
 }
 p {
-	font-size: 13px;
+	font-size: 18px;
+}
+.footer-copyright > a {
+	color: black;
 }
