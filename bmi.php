@@ -154,16 +154,11 @@ if (isset($_POST['submit'])) {
                         <p>
                             each other on their journeys to better health.
                         </p>
-                        <p>
-                            <a href="">Our Services</a>
-                        </p>
-                        <p>
-                            <a href="">Privacy Policy</a>
-                        </p>
+
                     </div>
 
 
-                    <div class="col-md-4 mx-auto mt-3 mb-4 text-end">
+                    <div class="col-md-4 mx-auto mt-3 mb-4 text-lg-end text-md-end text-sm-center">
                         <h6 class="text-uppercase font-weight-bold mb-4 " style="color: #70df70;
     font-weight: bold;
     font-size: 25px;">Contact Us</h6>
@@ -190,6 +185,14 @@ if (isset($_POST['submit'])) {
 
 
             <!-- Copyright -->
+            <div style="background-color:#fff;" class="footer-copyright text-center py-3">
+                <p>
+                    <a href="">Our Services</a>
+                </p>
+                <p>
+                    <a href="">Privacy Policy</a>
+                </p>
+            </div>
             <div style="background-color:#fff;" class="footer-copyright text-center py-3">
                 Copyright© 2023 | <a href=" https://uhealthy.in/">Uhealthy.in</a><br>
                 Design and Develop by Mag Cloud Solutions Pvt. Ltd.

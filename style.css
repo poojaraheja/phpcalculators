@@ -136,4 +136,9 @@ p {
 }
 .footer-copyright > a {
 	color: black;
+	text-decoration: none;
+}
+.footer-copyright > p > a {
+	color: grey;
+	text-decoration: none;
 }
