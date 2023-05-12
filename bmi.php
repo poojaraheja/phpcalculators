@@ -195,7 +195,7 @@ if (isset($_POST['submit'])) {
             </div>
             <div style="background-color:#fff;" class="footer-copyright text-center py-3">
                 Copyright© 2023 | <a href=" https://uhealthy.in/">Uhealthy.in</a><br>
-                Design and Develop by Mag Cloud Solutions Pvt. Ltd.
+                Design and Develop by <a href="https://www.magcloudsolutions.in/">Mag Cloud Solutions Pvt. Ltd.</a>
             </div>
 
         </footer>
