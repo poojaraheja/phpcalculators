@@ -1,0 +1,133 @@
+<?php
+
+require "functions.php";
+
+if (!isset($_POST['submit'])) {
+    $response = bmi($_POST['name'], $_POST['']);
+}
+
+?>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Bootstrap demo</title>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <header class="header">
+
+
+            </header>
+            <div class="form-wrap">
+                <form id="survey-form" action="bmi.php" method="post">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label id="name-label" for="name">Name</label>
+                                <input type="text" name="name" id="name" placeholder="Enter your name"
+                                    class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label id="email-label" for="email">Mobile</label>
+                                <input type="number" name="mobile" id="email" placeholder="Enter your number"
+                                    class="form-control" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label id="number-label" for="number">Email Id</label>
+                                <input type="email" name="email" id="number" min="10" max="99" class="form-control"
+                                    placeholder="Enter your email id">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label id="email-label" for="email">Your Weight(Kg)</label>
+                                <input type="number" name="weight" id="email" placeholder="Enter your weight"
+                                    class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Your Height(Feet)</label>
+                                <select id="dropdown" name="height" class="form-control" required>
+                                    <option disabled selected value>Select</option>
+                                    <option value="student">4</option>
+                                    <option value="job">5</option>
+                                    <option value="learner">6</option>
+                                    <option value="preferNo">7</option>
+
+                                </select>
+
+
+                            </div>
+
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Your Height(Inches)</label>
+                                <select id="dropdown" name="inches" class="form-control" required>
+                                    <option disabled selected value>Select</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Interested in knowing more :</label>
+                                <select id="dropdown" name="interested" class="form-control" required>
+                                    <option value="yes">Yes</option>
+                                    <option value="No">No</option>
+                                    <option value="Not Sure">Not Sure</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+
+
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <button type="submit" id="submit" class="btn btn-primary btn-block">Calculate BMI</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+        </script>
+    </body>
+
+</html>
