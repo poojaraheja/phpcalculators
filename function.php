@@ -242,15 +242,27 @@ function bmr_cal($name, $mobile, $email, $weight, $height, $inches, $age, $gende
 
 }
 
-// function calorie()
-// {
-//     $cal_height = intval($height) * 12 + intval($inches);
-//     $height_cm = ($cal_height * 2.5);
-//     if ($gender == "female") {
-//         $bmr_calorie_fem = 655 + (9.6 * $weight) + (1.8 * $height_cm) - (4.7 * $age);
-//     } elseif ($gender == 'male') {
-//         $bmr_calorie_male = 
-//     }
+function calorie()
+{
+    $cal_height = intval($height) * 12 + intval($inches);
+    $height_cm = ($cal_height * 2.5);
+    if ($gender == "female") {
+        $bmr = 655 + (9.6 * $weight) + (1.8 * $height_cm) - (4.7 * $age);
+    } elseif ($gender == 'male') {
+        $bmr = 66 + (13.7 * $weight) + (5 * $height_cm) - (6.8 * $age);
+    }
+    if ($activity == "sedentary") {
+        $calorie_cal = $bmr * 12;
+    } elseif ($activity == "lightly") {
+        $calorie_cal = $bmr * 1.375;
+    } elseif ($activity == "moderately") {
+        $calorie_cal = $bmr * 1.55;
 
-// }
+    } elseif ($activity == "veryactive") {
+        $calorie_cal = $bmr * 1.725;
+    } elseif ($activity == "extraactive") {
+        $calorie_cal = $bmr * 1.9;
+    }
+
+}
 ?>
