@@ -241,4 +241,13 @@ function bmr_cal($name, $mobile, $email, $weight, $height, $inches, $age, $gende
     return $response;
 
 }
+
+// function calorie()
+// {
+//     $cal_height = intval($height) * 12 + intval($inches);
+//     $height_cm = ($cal_height * 2.5);
+//     if($gender=="female"){
+//         $bmr
+//     }
+// }
 ?>
