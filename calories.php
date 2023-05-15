@@ -28,6 +28,10 @@ if (isset($_POST['submit'])) {
         <div class="container">
 
             <div class="form-wrap">
+                <div class="col-12">
+                    <h5>Enter Details to get your Required Calories:</h5>
+                    <hr>
+                </div>
                 <form id="survey-form" action="bmi.php" method="post">
                     <div class="row">
                         <div class="col-md-6">
@@ -113,14 +117,10 @@ if (isset($_POST['submit'])) {
                                     <option disabled selected value>Select</option>
                                     <option value="male">Male</option>
                                     <option value="female">Female</option>
-
                                 </select>
-
-
                             </div>
-
-
                         </div>
+
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Diet Goal</label>
@@ -129,32 +129,73 @@ if (isset($_POST['submit'])) {
                                     <option value="loss">Weight Loss</option>
                                     <option value="gain">weight Gain</option>
                                     <option value="maintain">weight Maintain</option>
-
                                 </select>
-
-
                             </div>
-
-
                         </div>
 
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label id="email-label" for="email">Exercise Time (Minutes)</label>
+                                <input type="number" name="exe_time" id="email" placeholder="Exercise Time"
+                                    class="form-control" required>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Activity</label>
+                                <select id="dropdown" name="activity" class="form-control" required>
+                                    <option disabled selected value>Select</option>
+                                    <option value="sedentary">Sedentary(2-3 days walk or very light exercise)</option>
+                                    <option value="light">Lightly active(3-5 days normal exercise)</option>
+                                    <option value="moderately">Moderately active(3-5 days bit of intense work-out)
+                                    </option>
+                                    <option value="veryactive">Very Active(intense work out for more than 5 days in a
+                                        week)</option>
+                                    <option value="extraactive">Extra Active(intense work-out for more than 5 days in a
+                                        week and i have physical work too)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Any Medications</label>
+                                <select id="dropdown" name="diet" class="form-control" required>
+                                    <option disabled selected value>Select</option>
+                                    <option value="loss">Weight Loss</option>
+                                    <option value="gain">weight Gain</option>
+                                    <option value="maintain">weight Maintain</option>
+                                </select>
+                            </div>
+                        </div>
 
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Interested in knowing more :</label>
                                 <select id="dropdown" name="interested" class="form-control" required>
-                                    <option value="yes">Yes</option>
-                                    <option value="No">No</option>
-                                    <option value="Not Sure">Not Sure</option>
+                                    <option disabled selected value>Select</option>
+                                    <option value="Diabetes">Diabetes</option>
+                                    <option value="Blood Pressure">Blood Pressure</option>
+                                    <option value="Thyroid(metabolism related)">Thyroid(metabolism related)</option>
+                                    <option value="Heart Related">Heart Related</option>
+                                    <option value="Liver Related">Liver Related</option>
+                                    <option value="Digestion Relate">Digestion Relate</option>
+                                    <option value="Hormonal Imbalance">Hormonal Imbalance</option>
+                                    <option value="Kidney Related">Kidney Related</option>
+                                    <option value="Immunity Problem">Immunity Problem</option>
+                                    <option value="Cholesterol/Lipid Related">Cholesterol/Lipid Related</option>
+                                    <option value="Other">Other</option>
+                                    <option value="Nothing">Nothing</option>
                                 </select>
                             </div>
                         </div>
-
                     </div>
+
                     <div class="row">
                         <div class="col-md-6">
                             <button type="submit" id="submit" class="btn btn-primary btn-block" name="submit">Calculate
-                                BMI</button>
+                                Calories</button>
                         </div>
                     </div>
 

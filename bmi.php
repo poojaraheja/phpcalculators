@@ -28,6 +28,10 @@ if (isset($_POST['submit'])) {
         <div class="container">
 
             <div class="form-wrap">
+                <div class="col-12">
+                    <h5>Enter Details to get your BMI:</h5>
+                    <hr>
+                </div>
                 <form id="survey-form" action="bmi.php" method="post">
                     <div class="row">
                         <div class="col-md-6">
@@ -112,12 +116,6 @@ if (isset($_POST['submit'])) {
                         </div>
 
                     </div>
-
-
-
-
-
-
                     <div class="row">
                         <div class="col-md-6">
                             <button type="submit" id="submit" class="btn btn-primary btn-block" name="submit">Calculate
