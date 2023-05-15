@@ -28,6 +28,10 @@ if (isset($_POST['submit'])) {
         <div class="container">
 
             <div class="form-wrap">
+                <div class="col-12">
+                    <h5>Enter Details to Calculate your Fat:</h5>
+                    <hr>
+                </div>
                 <form id="survey-form" action="fat.php" method="post">
                     <div class="row">
                         <div class="col-md-6">
@@ -89,14 +93,8 @@ if (isset($_POST['submit'])) {
 
                                     <option value="male">Male</option>
                                     <option value="female">Female</option>
-
-
                                 </select>
-
-
                             </div>
-
-
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
@@ -105,30 +103,15 @@ if (isset($_POST['submit'])) {
 
                                     <option value="yes">Yes</option>
                                     <option value="no">No</option>
-
-
                                 </select>
-
-
                             </div>
-
-
                         </div>
-
-
-
-
                     </div>
-
-
-
-
-
 
                     <div class="row">
                         <div class="col-md-6">
                             <button type="submit" id="submit" class="btn btn-primary btn-block"
-                                name="submit">Submit</button>
+                                name="submit">Calculate</button>
                         </div>
                     </div>
 
