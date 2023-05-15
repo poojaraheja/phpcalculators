@@ -26,7 +26,23 @@ if (isset($_POST['submit'])) {
 
         ?>
         <div class="container">
+            <?php if (@$response->status == "success") { ?>
+                <div class="alert alert-success" role="alert">
+                    Results Send On Your Whatsapp Successfully!!
+                </div>
 
+            <?php } elseif (@$response->status == "null") { ?>
+                <div class="alert alert-warning" role="alert">
+                    There might be an issue with our server. Please check your whatsapp for result, if not received please
+                    <a href="calories.php">Try Again</a>
+                </div>
+            <?php } elseif (@$response->status == "failed") { ?>
+                <div class="alert alert-danger" role="alert">
+                    Something Went Wrong
+                </div>
+
+
+            <?php } ?>
             <div class="form-wrap">
                 <div class="col-12">
                     <h5>Enter Details to get your Required Calories:</h5>
@@ -200,7 +216,7 @@ if (isset($_POST['submit'])) {
                     </div>
 
                 </form>
-                <?php echo @$response ?>
+
             </div>
 
         </div>
