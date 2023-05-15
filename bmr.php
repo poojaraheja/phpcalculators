@@ -3,7 +3,7 @@
 require "function.php";
 
 if (isset($_POST['submit'])) {
-    $response = bmi_cal($_POST['name'], $_POST['mobile'], $_POST['email'], $_POST['weight'], $_POST['height'], $_POST['inches']);
+    $response = bmr_cal($_POST['name'], $_POST['mobile'], $_POST['email'], $_POST['weight'], $_POST['height'], $_POST['inches'], $_POST['age'], $_POST['gender'], $_POST['interested']);
 }
 
 ?>
@@ -28,7 +28,7 @@ if (isset($_POST['submit'])) {
         <div class="container">
 
             <div class="form-wrap">
-                <form id="survey-form" action="bmi.php" method="post">
+                <form id="survey-form" action="bmr.php" method="post">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -138,7 +138,7 @@ if (isset($_POST['submit'])) {
                     <div class="row">
                         <div class="col-md-6">
                             <button type="submit" id="submit" class="btn btn-primary btn-block" name="submit">Calculate
-                                BMI</button>
+                                BMR</button>
                         </div>
                     </div>
 
@@ -153,7 +153,7 @@ if (isset($_POST['submit'])) {
         ?>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
-        </script>
+            </script>
     </body>
 
 </html>

@@ -127,12 +127,12 @@ function fat_cal($name, $mobile, $waist, $wrist, $hip, $forearm, $gender, $inter
     }
     if ($gender == 'female') {
 
-        $message = "Hii " . $name . ", Your Body Fat is: " . $body_fat_per . ". You are " . $condition . "!";
+        $message = "Hii " . $name . ", Your Body Fat is: " . round($body_fat_per, 2) . ". You are " . $condition . "!";
 
 
 
     } elseif ($gender == 'male') {
-        $message = "Hii " . $name . ", Your Body Fat is: " . $men_body_fat_percentage . ". You are " . $condition . "!";
+        $message = "Hii " . $name . ", Your Body Fat is: " . round($men_body_fat_percentage, 2) . ". You are " . $condition . "!";
 
 
 
@@ -180,4 +180,65 @@ function fat_cal($name, $mobile, $waist, $wrist, $hip, $forearm, $gender, $inter
     return $response;
 }
 
+
+function bmr_cal($name, $mobile, $email, $weight, $height, $inches, $age, $gender, $interested)
+{
+    $cal_height = intval($height) * 12 + intval($inches);
+    $height_cm = ($cal_height * 2.5);
+
+    if ($gender == "female") {
+        $bmr_female = 655 + (9.6 * $weight) + (1.8 * $height_cm) - (4.7 * $age);
+
+    } elseif ($gender == "male") {
+        $bmr_male = 66 + (13.7 * $weight) + (5 * $height_cm) - (6.8 * $age);
+    }
+    if ($gender == "female") {
+        $message = "Hii " . $name . ", Your BMR Value is: " . round($bmr_female, 2) . " !";
+
+    } elseif ($gender == "male") {
+        $message = "Hii " . $name . ",  Your BMR Value is: " . round($bmr_male, 2) . " !";
+    }
+    $ch = curl_init();
+    // $url = 'https://fullstackmtech.com/api/send.php';
+    $url = "https://fullstackmtech.com/api/send.php?number=91" . $mobile . "&type=text&message=" . urlencode($message) . "&instance_id=644FF20D6602A&access_token=e5eb155cecb6a89011cb8568e1135663";
+
+    // $data = array(
+    //     'number'       => '91' . $mobile,
+    //     'type'         => 'text',
+    //     'message'      => $message,
+    //     'instance_id'  => '644FF20D6602A',
+    //     'access_token' => 'e5eb155cecb6a89011cb8568e1135663'
+
+    // );
+
+
+
+
+
+
+
+    curl_setopt($ch, CURLOPT_URL, $url);
+
+    curl_setopt($ch, CURLOPT_POST, 1);
+
+    // curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+
+
+
+    $response = curl_exec($ch);
+
+
+
+
+    curl_close($ch);
+
+
+
+
+    return $response;
+
+}
 ?>
