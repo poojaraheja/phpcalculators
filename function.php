@@ -242,12 +242,15 @@ function bmr_cal($name, $mobile, $email, $weight, $height, $inches, $age, $gende
 
 }
 
-function calorie()
-{
-    $cal_height = intval($height) * 12 + intval($inches);
-    $height_cm = ($cal_height * 2.5);
-    if($gender=="female"){
-        $bmr_calorie_fem = 655 + (9.6*$weight)+ (1.8*$height_cm)
-    }
-}
+// function calorie()
+// {
+//     $cal_height = intval($height) * 12 + intval($inches);
+//     $height_cm = ($cal_height * 2.5);
+//     if ($gender == "female") {
+//         $bmr_calorie_fem = 655 + (9.6 * $weight) + (1.8 * $height_cm) - (4.7 * $age);
+//     } elseif ($gender == 'male') {
+//         $bmr_calorie_male = 
+//     }
+
+// }
 ?>
