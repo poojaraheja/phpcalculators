@@ -72,9 +72,9 @@ function bmi_cal($name, $mobile, $email, $weight, $height, $inches)
 
 }
 
-function fat_cal($name, $mobile, $waist, $wrist, $weight, $hip, $forearm, $gender, $interested)
+function fat_cal($name, $mobile, $waist, $wrist, $hip, $forearm, $gender, $interested, $weight)
 {
-    if ($gender == 'women') {
+    if ($gender == 'female') {
         $body_weight = (intval($weight * 0.732)) + 9.987;
         $wrist_measure = intval($wrist) / 3.140;
         $waist_measure = intval($waist) * 0.157;
@@ -125,55 +125,59 @@ function fat_cal($name, $mobile, $waist, $wrist, $weight, $hip, $forearm, $gende
 
 
     }
-    if ($gender == 'women') {
+    if ($gender == 'female') {
 
-        $message = "Hii " . $name . ", your BMI is: " . $body_fat_per . ". You are " . $condition . "!";
-
-        $ch = curl_init();
-        // $url = 'https://fullstackmtech.com/api/send.php';
-        $url = "https://fullstackmtech.com/api/send.php?number=91" . $mobile . "&type=text&message=" . urlencode($message) . "&instance_id=644FF20D6602A&access_token=e5eb155cecb6a89011cb8568e1135663";
-
-        // $data = array(
-        //     'number'       => '91' . $mobile,
-        //     'type'         => 'text',
-        //     'message'      => $message,
-        //     'instance_id'  => '644FF20D6602A',
-        //     'access_token' => 'e5eb155cecb6a89011cb8568e1135663'
-
-        // );
+        $message = "Hii " . $name . ", Your Body Fat is: " . $body_fat_per . ". You are " . $condition . "!";
 
 
 
+    } elseif ($gender == 'male') {
+        $message = "Hii " . $name . ", Your Body Fat is: " . $men_body_fat_percentage . ". You are " . $condition . "!";
 
 
-
-
-        curl_setopt($ch, CURLOPT_URL, $url);
-
-        curl_setopt($ch, CURLOPT_POST, 1);
-
-        // curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
-
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-
-
-
-        $response = curl_exec($ch);
-
-
-
-
-        curl_close($ch);
-
-
-
-
-        return $response;
-
-    } elseif ($gender == ' men') {
 
     }
+    $ch = curl_init();
+    // $url = 'https://fullstackmtech.com/api/send.php';
+    $url = "https://fullstackmtech.com/api/send.php?number=91" . $mobile . "&type=text&message=" . urlencode($message) . "&instance_id=644FF20D6602A&access_token=e5eb155cecb6a89011cb8568e1135663";
+
+    // $data = array(
+    //     'number'       => '91' . $mobile,
+    //     'type'         => 'text',
+    //     'message'      => $message,
+    //     'instance_id'  => '644FF20D6602A',
+    //     'access_token' => 'e5eb155cecb6a89011cb8568e1135663'
+
+    // );
+
+
+
+
+
+
+
+    curl_setopt($ch, CURLOPT_URL, $url);
+
+    curl_setopt($ch, CURLOPT_POST, 1);
+
+    // curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+
+
+
+    $response = curl_exec($ch);
+
+
+
+
+    curl_close($ch);
+
+
+
+
+    return $response;
 }
 
 ?>
