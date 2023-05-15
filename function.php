@@ -24,7 +24,7 @@ function bmi_cal($name, $mobile, $email, $weight, $height, $inches)
         $condition = "none";
     }
     // $message = "hello {$name}";
-    $message = "Hii " . $name . ", your BMI is: " . $cal . ". You are " . $condition . "!";
+    $message = "Hii " . $name . ", your BMI is: " . round($cal, 2) . ". You are " . $condition . "!";
 
     $ch = curl_init();
     // $url = 'https://fullstackmtech.com/api/send.php';
