@@ -58,16 +58,21 @@ function bmi_cal($name, $mobile, $email, $weight, $height, $inches)
 
     $response = curl_exec($ch);
 
+    $err = curl_error($ch);
 
 
 
     curl_close($ch);
 
 
+    if ($err) {
+        echo "cURL Error #:" . $err;
+    } else {
+
+        return json_decode($response);
 
 
-    return $response;
-
+    }
 
 
 }
@@ -168,16 +173,21 @@ function fat_cal($name, $mobile, $waist, $wrist, $hip, $forearm, $gender, $inter
 
 
     $response = curl_exec($ch);
-
+    $err = curl_error($ch);
 
 
 
     curl_close($ch);
 
 
+    if ($err) {
+        echo "cURL Error #:" . $err;
+    } else {
+
+        return json_decode($response);
 
 
-    return $response;
+    }
 }
 
 
@@ -229,20 +239,27 @@ function bmr_cal($name, $mobile, $email, $weight, $height, $inches, $age, $gende
 
 
     $response = curl_exec($ch);
-
+    $err = curl_error($ch);
 
 
 
     curl_close($ch);
 
 
+    if ($err) {
+        echo "cURL Error #:" . $err;
+    } else {
+
+        return json_decode($response);
 
 
-    return $response;
+    }
+
+
 
 }
 
-function calorie()
+function calorie($name, $mobile, $email, $weight, $height, $inches, $age, $gender, $diet, $exe_time, $activity, $medications, $interested)
 {
     $cal_height = intval($height) * 12 + intval($inches);
     $height_cm = ($cal_height * 2.5);
@@ -262,6 +279,132 @@ function calorie()
         $calorie_cal = $bmr * 1.725;
     } elseif ($activity == "extraactive") {
         $calorie_cal = $bmr * 1.9;
+    }
+
+}
+
+
+function water($name, $mobile, $email, $weight, $age, $exe_time, $interested)
+{
+    $f1 = $weight * 0.44;
+    $f2 = ($exe_time / 30) * 0.355;
+    $result = $f1 + $f2;
+    $message = "Hii " . $name . ",  Your Water Level Value is: " . round($result, 2) . "";
+    $ch = curl_init();
+    // $url = 'https://fullstackmtech.com/api/send.php';
+    $url = "https://fullstackmtech.com/api/send.php?number=91" . $mobile . "&type=text&message=" . urlencode($message) . "&instance_id=644FF20D6602A&access_token=e5eb155cecb6a89011cb8568e1135663";
+
+    // $data = array(
+    //     'number'       => '91' . $mobile,
+    //     'type'         => 'text',
+    //     'message'      => $message,
+    //     'instance_id'  => '644FF20D6602A',
+    //     'access_token' => 'e5eb155cecb6a89011cb8568e1135663'
+
+    // );
+
+
+
+
+
+
+
+    curl_setopt($ch, CURLOPT_URL, $url);
+
+    curl_setopt($ch, CURLOPT_POST, 1);
+
+    // curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+
+
+
+    $response = curl_exec($ch);
+
+    $err = curl_error($ch);
+
+
+
+    curl_close($ch);
+
+
+    if ($err) {
+        echo "cURL Error #:" . $err;
+    } else {
+
+        return json_decode($response);
+
+
+    }
+}
+
+function waist_to_hip($name, $mobile, $email, $waist, $hip, $interested, $gender)
+{
+    $wth = $waist / $hip;
+    if ($gender == "male") {
+        if ($wth <= 0.95) {
+            $condition = "Low Risk";
+        } elseif ($wth > 0.96 && $wth < 1.0) {
+            $condition = "Moderate Risk";
+        } elseif ($wth > 1.0) {
+            $condition = "High Risk";
+        }
+    } elseif ($gender == "female") {
+        if ($wth <= 0.80) {
+            $condition = "Low Risk";
+        } elseif ($wth > 0.81 && $wth < 0.85) {
+            $condition = "Moderate Risk";
+        } elseif ($wth > 0.85) {
+            $condition = "High Risk";
+        }
+    }
+    $message = "Hii " . $name . ",  Your Waist To Hip Ratio Value is: " . round($wth, 2) . ". You have " . $condition . "";
+    $ch = curl_init();
+    // $url = 'https://fullstackmtech.com/api/send.php';
+    $url = "https://fullstackmtech.com/api/send.php?number=91" . $mobile . "&type=text&message=" . urlencode($message) . "&instance_id=644FF20D6602A&access_token=e5eb155cecb6a89011cb8568e1135663";
+
+    // $data = array(
+    //     'number'       => '91' . $mobile,
+    //     'type'         => 'text',
+    //     'message'      => $message,
+    //     'instance_id'  => '644FF20D6602A',
+    //     'access_token' => 'e5eb155cecb6a89011cb8568e1135663'
+
+    // );
+
+
+
+
+
+
+
+    curl_setopt($ch, CURLOPT_URL, $url);
+
+    curl_setopt($ch, CURLOPT_POST, 1);
+
+    // curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+
+
+
+    $response = curl_exec($ch);
+    $err = curl_error($ch);
+
+
+
+    curl_close($ch);
+
+
+    if ($err) {
+        echo "cURL Error #:" . $err;
+    } else {
+
+        return json_decode($response);
+
+
     }
 
 }

@@ -3,7 +3,7 @@
 require "function.php";
 
 if (isset($_POST['submit'])) {
-    $response = fat_cal($_POST['name'], $_POST['mobile'], $_POST['waist'], $_POST['wrist'], $_POST['hip'], $_POST['forearm'], $_POST['gender'], $_POST['interested'], $_POST['weight']);
+    $response = waist_to_hip($_POST['name'], $_POST['mobile'], $_POST['email'], $_POST['waist'], $_POST['hip'], $_POST['interested'], $_POST['gender']);
 }
 
 ?>
@@ -29,10 +29,10 @@ if (isset($_POST['submit'])) {
 
             <div class="form-wrap">
                 <div class="col-12">
-                    <h5>Enter Details to Calculate your Body Fat:</h5>
+                    <h5>Enter Details to get your Waist To Hip Ratio:</h5>
                     <hr>
                 </div>
-                <form id="survey-form" action="fat.php" method="post">
+                <form id="survey-form" action="waist-to-hip.php" method="post">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -53,65 +53,55 @@ if (isset($_POST['submit'])) {
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label id="number-label" for="number">Weight</label>
-                                <input type="number" name="weight" id="number" min="10" max="99" class="form-control"
-                                    placeholder="Enter your weight(Kg)">
+                                <label id="number-label" for="number">Email Id</label>
+                                <input type="email" name="email" id="number" min="10" max="99" class="form-control"
+                                    placeholder="Enter your email id">
                             </div>
                         </div>
+
+
+
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label id="email-label" for="email">Waist</label>
-                                <input type="number" name="waist" id="email" placeholder="Enter your waist in inches"
+                                <label id="email-label" for="email">Waist(In Inches)</label>
+                                <input type="number" name="waist" id="email" placeholder="In Inches"
                                     class="form-control" required>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label id="email-label" for="email">Wrist Measurement(At fullest point)</label>
-                                <input type="number" name="wrist" id="email"
-                                    placeholder="Wrist Measurement(At Fullest Point)" class="form-control" required>
+                                <label id="email-label" for="email">Hip(In Inches)</label>
+                                <input type="number" name="hip" id="email" placeholder="In Inches" class="form-control"
+                                    required>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label id="email-label" for="email">Hip Measurement(At fullest point)</label>
-                                <input type="number" name="hip" id="email"
-                                    placeholder="Hip Measurement(At Fullest Point)" class="form-control" required>
+                                <label>Interested in knowing more :</label>
+                                <select id="dropdown" name="interested" class="form-control" required>
+                                    <option value="yes">Yes</option>
+                                    <option value="No">No</option>
+                                    <option value="Not Sure">Not Sure</option>
+                                </select>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label id="email-label" for="email">Forearm Measurement(At fullest point)</label>
-                                <input type="number" name="forearm" id="email"
-                                    placeholder="Forearm Measurement(At Fullest Point)" class="form-control" required>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Gender</label>
+                                <label>Your Gender</label>
                                 <select id="dropdown" name="gender" class="form-control" required>
-
+                                    <option disabled selected value>Select</option>
                                     <option value="male">Male</option>
                                     <option value="female">Female</option>
                                 </select>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Interested in knowing More</label>
-                                <select id="dropdown" name="interested" class="form-control" required>
 
-                                    <option value="yes">Yes</option>
-                                    <option value="no">No</option>
-                                </select>
-                            </div>
-                        </div>
                     </div>
 
                     <div class="row">
                         <div class="col-md-6">
-                            <button type="submit" id="submit" class="btn btn-primary btn-block"
-                                name="submit">Calculate</button>
+                            <button type="submit" id="submit" class="btn btn-primary btn-block" name="submit">Calculate
+                            </button>
                         </div>
                     </div>
 

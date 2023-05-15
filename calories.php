@@ -3,7 +3,7 @@
 require "function.php";
 
 if (isset($_POST['submit'])) {
-    $response = bmi_cal($_POST['name'], $_POST['mobile'], $_POST['email'], $_POST['weight'], $_POST['height'], $_POST['inches'], $_POST['age'], $_POST['gender'], $_POST['diet'], $_POST['exe_time'], $_POST['activity'], $_POST['medication'], $_POST['interested']);
+    $response = calorie($_POST['name'], $_POST['mobile'], $_POST['email'], $_POST['weight'], $_POST['height'], $_POST['inches'], $_POST['age'], $_POST['gender'], $_POST['diet'], $_POST['exe_time'], $_POST['activity'], $_POST['medications'], $_POST['interested']);
 }
 
 ?>
@@ -210,7 +210,7 @@ if (isset($_POST['submit'])) {
         ?>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
-        </script>
+            </script>
     </body>
 
 </html>

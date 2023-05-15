@@ -21,10 +21,10 @@
                     <ul class="dropdown-menu mx-4 ">
                         <li><a class="dropdown-item" href="bmi.php">BMI</a></li>
                         <li><a class="dropdown-item" href="bmr.php">BMR</a></li>
-                        <li><a class="dropdown-item" href="#">Waist to Hip Ratio</a></li>
+                        <li><a class="dropdown-item" href="waist-to-hip.php">Waist to Hip Ratio</a></li>
                         <li><a class="dropdown-item" href="calories.php">Calories</a></li>
                         <li><a class="dropdown-item" href="fat.php">Body Fat</a></li>
-                        <li><a class="dropdown-item" href="#">Water</a></li>
+                        <li><a class="dropdown-item" href="water.php">Water</a></li>
 
 
                     </ul>
