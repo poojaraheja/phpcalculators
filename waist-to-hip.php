@@ -31,18 +31,16 @@ if (isset($_POST['submit'])) {
                 Results Send On Your Whatsapp Successfully!!
             </div>
 
-            <?php } elseif (@$response->status == "null") { ?>
-            <div class="alert alert-warning" role="alert">
-                There might be an issue with our server. Please check your whatsapp for result, if not received please
-                <a href="waist-to-hip.php">Try Again</a>
-            </div>
-            <?php } elseif (@$response->status == "failed") { ?>
+
+            <?php } else {
+                if (@$response) { ?>
             <div class="alert alert-danger" role="alert">
                 Something Went Wrong
             </div>
 
 
-            <?php } ?>
+            <?php }
+            } ?>
             <div class="form-wrap">
                 <div class="col-12">
                     <h5>Enter Details to get your Waist To Hip Ratio:</h5>
@@ -54,14 +52,14 @@ if (isset($_POST['submit'])) {
                             <div class="form-group">
                                 <label id="name-label" for="name">Name</label>
                                 <input type="text" name="name" id="name" placeholder="Enter your name"
-                                    class="form-control" required>
+                                    value="<?php echo @$_COOKIE['name'] ?>" class="form-control" required>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label id="email-label" for="email">Mobile</label>
                                 <input type="number" name="mobile" placeholder="Enter your number" class="form-control"
-                                    required>
+                                    value="<?php echo @$_COOKIE['mobile'] ?>" required>
                             </div>
                         </div>
                     </div>
@@ -71,7 +69,7 @@ if (isset($_POST['submit'])) {
                             <div class="form-group">
                                 <label id="number-label" for="number">Email Id</label>
                                 <input type="email" name="email" id="number" min="10" max="99" class="form-control"
-                                    placeholder="Enter your email id">
+                                    value="<?php echo @$_COOKIE['email'] ?>" placeholder="Enter your email id">
                             </div>
                         </div>
 

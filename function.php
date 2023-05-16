@@ -4,6 +4,10 @@ function bmi_cal($name, $mobile, $email, $weight, $height, $inches)
 {
 
     // $condition = "";
+    setcookie('name', $name, time() + 3600);
+    setcookie('email', $email, time() + 3600);
+    setcookie('mobile', $mobile, time() + 3600);
+    setcookie('weight', $weight, time() + 3600);
     $cal_height = intval($height) * 12 + intval($inches);
     $height_cm = ($cal_height * 2.5);
     $height_m = $height_cm / 100;
@@ -66,11 +70,13 @@ function bmi_cal($name, $mobile, $email, $weight, $height, $inches)
 
 
     if ($err) {
-        echo "cURL Error #:" . $err;
+        return "cURL Error #:" . $err;
     } else {
-
-        return json_decode($response);
-
+        if (is_null($response)) {
+            return "null";
+        } else {
+            return json_decode($response);
+        }
 
     }
 
@@ -79,6 +85,11 @@ function bmi_cal($name, $mobile, $email, $weight, $height, $inches)
 
 function fat_cal($name, $mobile, $waist, $wrist, $hip, $forearm, $gender, $interested, $weight)
 {
+    setcookie('name', $name, time() + 3600);
+    setcookie('mobile', $mobile, time() + 3600);
+    setcookie('weight', $weight, time() + 3600);
+
+    setcookie('mobile', $mobile, time() + 3600);
     if ($gender == 'female') {
         $body_weight = (intval($weight * 0.732)) + 9.987;
         $wrist_measure = intval($wrist) / 3.140;
@@ -181,18 +192,23 @@ function fat_cal($name, $mobile, $waist, $wrist, $hip, $forearm, $gender, $inter
 
 
     if ($err) {
-        echo "cURL Error #:" . $err;
+        return "cURL Error #:" . $err;
     } else {
-
-        return json_decode($response);
-
-
+        if (is_null($response)) {
+            return "null";
+        } else {
+            return json_decode($response);
+        }
     }
 }
 
 
 function bmr_cal($name, $mobile, $email, $weight, $height, $inches, $age, $gender, $interested)
 {
+    setcookie('name', $name, time() + 3600);
+    setcookie('email', $email, time() + 3600);
+    setcookie('mobile', $mobile, time() + 3600);
+    setcookie('weight', $weight, time() + 3600);
     $cal_height = intval($height) * 12 + intval($inches);
     $height_cm = ($cal_height * 2.5);
 
@@ -247,12 +263,13 @@ function bmr_cal($name, $mobile, $email, $weight, $height, $inches, $age, $gende
 
 
     if ($err) {
-        echo "cURL Error #:" . $err;
+        return "cURL Error #:" . $err;
     } else {
-
-        return json_decode($response);
-
-
+        if (is_null($response)) {
+            return "null";
+        } else {
+            return json_decode($response);
+        }
     }
 
 
@@ -261,6 +278,10 @@ function bmr_cal($name, $mobile, $email, $weight, $height, $inches, $age, $gende
 
 function calorie($name, $mobile, $email, $weight, $height, $inches, $age, $gender, $diet, $exe_time, $activity, $medications, $interested)
 {
+    setcookie('name', $name, time() + 3600);
+    setcookie('email', $email, time() + 3600);
+    setcookie('mobile', $mobile, time() + 3600);
+    setcookie('weight', $weight, time() + 3600);
     $cal_height = intval($height) * 12 + intval($inches);
     $height_cm = ($cal_height * 2.5);
     if ($gender == "female") {
@@ -280,12 +301,97 @@ function calorie($name, $mobile, $email, $weight, $height, $inches, $age, $gende
     } elseif ($activity == "extraactive") {
         $calorie_cal = $bmr * 1.9;
     }
+    $protein = round($calorie_cal * 0.4);
+    $carbs = round($calorie_cal * 0.3);
+    $fats = round($calorie_cal * 0.3);
+    $protein_gm = round($protein / 4);
+    $carbs_gm = round($carbs / 4);
+    $fats_gm = round($fats / 9);
+    $proten_per_meal = round($protein_gm / 4);
+    $carbs_per_meal = round($carbs_gm / 4);
+    $fats_per_meal = round($fats_gm / 4);
+    $protein_per_snack = round($proten_per_meal / 3);
+    $carbs_per_snack = round($carbs_per_meal / 3);
+    $fat_per_snack = round($fats_per_meal / 3);
+
+    $message = "Hii " . $name . ", below is your diet plan 
+    \nYou have to consume " . $calorie_cal . " per day in your meal 
+    \nThat includes :- 
+    \n40% Protein, i,e., " . $protein . "
+    \n30% Carbs, i,e., " . $carbs . "
+    \n30% fats, i,e., " . $fats . "
+    \nNutrition information in grams according to your diet plan is:-
+    \n" . $protein_gm . " gram protein per day 
+    \n" . $carbs_gm . " gram carbs per day 
+    \n" . $fats_gm . " gram fats per day 
+    \nPer meal information (Breakfast, Lunch, Dinner and 3 snacks)
+    \n" . $proten_per_meal . " grams protein
+    \n" . $carbs_per_meal . " grams carbs
+    \n" . $fats_per_meal . " grams fats
+    \nPer Snack Information:-
+    \n" . $protein_per_snack . "grams Protein 
+    \n" . $carbs_per_snack . "grams Carbs 
+    \n" . $fat_per_snack . "grams Fats";
+    $ch = curl_init();
+    // $url = 'https://fullstackmtech.com/api/send.php';
+    $url = "https://fullstackmtech.com/api/send.php?number=91" . $mobile . "&type=text&message=" . urlencode($message) . "&instance_id=644FF20D6602A&access_token=e5eb155cecb6a89011cb8568e1135663";
+
+    // $data = array(
+    //     'number'       => '91' . $mobile,
+    //     'type'         => 'text',
+    //     'message'      => $message,
+    //     'instance_id'  => '644FF20D6602A',
+    //     'access_token' => 'e5eb155cecb6a89011cb8568e1135663'
+
+    // );
+
+
+
+
+
+
+
+    curl_setopt($ch, CURLOPT_URL, $url);
+
+    curl_setopt($ch, CURLOPT_POST, 1);
+
+    // curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+
+
+
+    $response = curl_exec($ch);
+
+    $err = curl_error($ch);
+
+
+
+    curl_close($ch);
+
+
+    if ($err) {
+        return "cURL Error #:" . $err;
+    } else {
+        if (is_null($response)) {
+            return "null";
+        } else {
+            return json_decode($response);
+        }
+    }
+
 
 }
 
 
 function water($name, $mobile, $email, $weight, $age, $exe_time, $interested)
 {
+    setcookie('name', $name, time() + 3600);
+    setcookie('email', $email, time() + 3600);
+    setcookie('mobile', $mobile, time() + 3600);
+    setcookie('weight', $weight, time() + 3600);
+
     $f1 = $weight * 0.44;
     $f2 = ($exe_time / 30) * 0.355;
     $result = $f1 + $f2;
@@ -330,17 +436,21 @@ function water($name, $mobile, $email, $weight, $age, $exe_time, $interested)
 
 
     if ($err) {
-        echo "cURL Error #:" . $err;
+        return "cURL Error #:" . $err;
     } else {
-
-        return json_decode($response);
-
-
+        if (is_null($response)) {
+            return "null";
+        } else {
+            return json_decode($response);
+        }
     }
 }
 
 function waist_to_hip($name, $mobile, $email, $waist, $hip, $interested, $gender)
 {
+    setcookie('name', $name, time() + 3600);
+    setcookie('email', $email, time() + 3600);
+    setcookie('mobile', $mobile, time() + 3600);
     $wth = $waist / $hip;
     if ($gender == "male") {
         if ($wth <= 0.95) {
@@ -399,12 +509,13 @@ function waist_to_hip($name, $mobile, $email, $waist, $hip, $interested, $gender
 
 
     if ($err) {
-        echo "cURL Error #:" . $err;
+        return "cURL Error #:" . $err;
     } else {
-
-        return json_decode($response);
-
-
+        if (is_null($response)) {
+            return "null";
+        } else {
+            return json_decode($response);
+        }
     }
 
 }
