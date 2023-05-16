@@ -301,37 +301,37 @@ function calorie($name, $mobile, $email, $weight, $height, $inches, $age, $gende
     } elseif ($activity == "extraactive") {
         $calorie_cal = $bmr * 1.9;
     }
-    $protein = round($calorie_cal * 0.4);
-    $carbs = round($calorie_cal * 0.3);
-    $fats = round($calorie_cal * 0.3);
-    $protein_gm = round($protein / 4);
-    $carbs_gm = round($carbs / 4);
-    $fats_gm = round($fats / 9);
-    $proten_per_meal = round($protein_gm / 4);
-    $carbs_per_meal = round($carbs_gm / 4);
-    $fats_per_meal = round($fats_gm / 4);
-    $protein_per_snack = round($proten_per_meal / 3);
-    $carbs_per_snack = round($carbs_per_meal / 3);
-    $fat_per_snack = round($fats_per_meal / 3);
+    $protein = round($calorie_cal * 0.4, 2);
+    $carbs = round($calorie_cal * 0.3, 2);
+    $fats = round($calorie_cal * 0.3, 2);
+    $protein_gm = round($protein / 4, 2);
+    $carbs_gm = round($carbs / 4, 2);
+    $fats_gm = round($fats / 9, 2);
+    $proten_per_meal = round($protein_gm / 4, 2);
+    $carbs_per_meal = round($carbs_gm / 4, 2);
+    $fats_per_meal = round($fats_gm / 4, 2);
+    $protein_per_snack = round($proten_per_meal / 3, 2);
+    $carbs_per_snack = round($carbs_per_meal / 3, 2);
+    $fat_per_snack = round($fats_per_meal / 3, 2);
 
-    $message = "Hii " . $name . ", below is your diet plan 
-    \nYou have to consume " . $calorie_cal . " per day in your meal 
+    $message = "Hii " . $name . ", below is your diet plan:- 
+    \nYou have to consume " . $calorie_cal . " calories per day in your meal 
     \nThat includes :- 
-    \n40% Protein, i,e., " . $protein . "
-    \n30% Carbs, i,e., " . $carbs . "
-    \n30% fats, i,e., " . $fats . "
+    \n=>40% Protein i.e, " . $protein . "
+    \n=>30% Carbs i.e, " . $carbs . "
+    \n=>30% fats i.e, " . $fats . "
     \nNutrition information in grams according to your diet plan is:-
-    \n" . $protein_gm . " gram protein per day 
-    \n" . $carbs_gm . " gram carbs per day 
-    \n" . $fats_gm . " gram fats per day 
+    \n=>" . $protein_gm . " gram protein per day 
+    \n=>" . $carbs_gm . " gram carbs per day 
+    \n=>" . $fats_gm . " gram fats per day 
     \nPer meal information (Breakfast, Lunch, Dinner and 3 snacks)
-    \n" . $proten_per_meal . " grams protein
-    \n" . $carbs_per_meal . " grams carbs
-    \n" . $fats_per_meal . " grams fats
+    \n=>" . $proten_per_meal . " grams protein
+    \n=>" . $carbs_per_meal . " grams carbs
+    \n=>" . $fats_per_meal . " grams fats
     \nPer Snack Information:-
-    \n" . $protein_per_snack . "grams Protein 
-    \n" . $carbs_per_snack . "grams Carbs 
-    \n" . $fat_per_snack . "grams Fats";
+    \n=>" . $protein_per_snack . "grams Protein 
+    \n=>" . $carbs_per_snack . "grams Carbs 
+    \n=>" . $fat_per_snack . "grams Fats";
     $ch = curl_init();
     // $url = 'https://fullstackmtech.com/api/send.php';
     $url = "https://fullstackmtech.com/api/send.php?number=91" . $mobile . "&type=text&message=" . urlencode($message) . "&instance_id=644FF20D6602A&access_token=e5eb155cecb6a89011cb8568e1135663";
