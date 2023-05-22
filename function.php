@@ -29,7 +29,7 @@ function bmi_cal($name, $mobile, $email, $weight, $height, $inches)
     }
     // $message = "hello {$name}";
     $message = "Your BMI is: " . round($cal, 2) . "
-    \nYou are " . $condition . " !.
+    \nYou are " . $condition . " !
     \nIf you are not happy with your BMI, get in touch with our of our Lifestyle Coach to improve it for better.
     \nBook an appointment:
     \nhttps://uhealthy.in/book-appointment/";
@@ -223,7 +223,10 @@ function bmr_cal($name, $mobile, $email, $weight, $height, $inches, $age, $gende
         $bmr_male = 66 + (13.7 * $weight) + (5 * $height_cm) - (6.8 * $age);
     }
     if ($gender == "female") {
-        $message = "Hii " . $name . ", Your BMR Value is: " . round($bmr_female, 2) . " !";
+        $message = "Basal Metabolic Rate, represents the amount of energy your body needs to perform basic functions while at rest, such as breathing, circulating blood, and maintaining organ function. It is the minimum amount of calories required to sustain life without any physical activity.
+        \nYour BMR Value is: " . round($bmr_female, 2) . " Kcal
+        \nFor more details, please book an appointment with our Lifestyle Coaches with below link
+        \nhttps://uhealthy.in/book-appointment/";
 
     } elseif ($gender == "male") {
         $message = "Basal Metabolic Rate, represents the amount of energy your body needs to perform basic functions while at rest, such as breathing, circulating blood, and maintaining organ function. It is the minimum amount of calories required to sustain life without any physical activity.
@@ -404,8 +407,7 @@ function water($name, $mobile, $email, $weight, $age, $exe_time, $interested)
     $result = $f1 + $f2;
     $message = "Drinking optimum amount of water is the most important part of Lifestyle. 
     \nAccording to your Parameters, you should ideally drink " . round($result, 2) . " Liters of water every day.
-    \nPlease connect with our Lifestyle coaches to understand how to split your " . round($result, 2) . " Litres of water in whole day
-    \nhttps://uhealthy.in/book-appointment/";
+    \nPlease connect with our Lifestyle coaches to understand how to split your " . round($result, 2) . " Litres of water in whole day";
     $ch = curl_init();
     // $url = 'https://fullstackmtech.com/api/send.php';
     $url = "https://fullstackmtech.com/api/send.php?number=91" . $mobile . "&type=text&message=" . urlencode($message) . "&instance_id=644FF20D6602A&access_token=e5eb155cecb6a89011cb8568e1135663";
@@ -479,8 +481,7 @@ function waist_to_hip($name, $mobile, $email, $waist, $hip, $interested, $gender
             $condition = "High Risk";
         }
     }
-    $message = "Your W2H Ratio is: " . round($wth, 2) . "
-    \nhttps://uhealthy.in/book-appointment/";
+    $message = "Your W2H Ratio is: " . round($wth, 2) . "";
     $ch = curl_init();
     // $url = 'https://fullstackmtech.com/api/send.php';
     $url = "https://fullstackmtech.com/api/send.php?number=91" . $mobile . "&type=text&message=" . urlencode($message) . "&instance_id=644FF20D6602A&access_token=e5eb155cecb6a89011cb8568e1135663";
