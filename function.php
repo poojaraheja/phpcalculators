@@ -28,7 +28,11 @@ function bmi_cal($name, $mobile, $email, $weight, $height, $inches)
         $condition = "none";
     }
     // $message = "hello {$name}";
-    $message = "Hii " . $name . ", your BMI is: " . round($cal, 2) . ". You are " . $condition . "!";
+    $message = "Your BMI is: " . round($cal, 2) . ".
+    \nYou are " . $condition . "!.
+    \nIf you are not happy with your BMI, get in touch with our of our Lifestyle Coach to improve it for better.
+    \nBook an appointment:
+    \nhttps://uhealthy.in/book-appointment/";
 
     $ch = curl_init();
     // $url = 'https://fullstackmtech.com/api/send.php';
@@ -290,7 +294,7 @@ function calorie($name, $mobile, $email, $weight, $height, $inches, $age, $gende
         $bmr = 66 + (13.7 * $weight) + (5 * $height_cm) - (6.8 * $age);
     }
     if ($activity == "sedentary") {
-        $calorie_cal = $bmr * 12;
+        $calorie_cal = $bmr * 1.2;
     } elseif ($activity == "lightly") {
         $calorie_cal = $bmr * 1.375;
     } elseif ($activity == "moderately") {
